@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap');
+
+:root {
+  --direction: rtl;
+}
+
+html,
+body {
+  direction: var(--direction);
+  padding: 0;
+  margin: 0;
+  font-family: 'Tajawal', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cairo', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+/* تخصيص أنماط الأزرار */
+.btn-primary {
+  @apply bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-secondary-600 hover:bg-secondary-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200;
+}
+
+.btn-outline {
+  @apply border border-primary-600 text-primary-600 hover:bg-primary-50 font-bold py-2 px-4 rounded transition-colors duration-200;
+}
+
+/* تخصيص أنماط البطاقات */
+.card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200;
+}
+
+/* تخصيص أنماط حقول الإدخال */
+.input {
+  @apply border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+}
