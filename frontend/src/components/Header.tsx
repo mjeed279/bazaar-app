@@ -15,7 +15,131 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* الشعار */}
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-primary-600">
+            <Link href="/" className="text-2xl font-boimport React, { useState } from 'react';
+              import Link from 'next/link';
+              import { FaShoppingCart, FaSearch, FaUser, FaBars, FaTimes } from 'react-icons/fa';
+              
+              const Header: React.FC = () => {
+                const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+              
+                const toggleMobileMenu = () => {
+                  setMobileMenuOpen(!mobileMenuOpen);
+              };
+              
+                return (
+                  <header>
+              {/* شريط العلامة التجارية بتدرج لوني */}
+                    <div className="bg-gradient-to-r from-secondary-500 to-primary-500 text-white py-2">
+                    <div className="container mx-auto px-4 flex justify-between items-center">
+                              <div className="text-sm">HOT: Free Express Shipping</div>div>
+                              <div className="text-sm">+</div>div>
+                            </div>div>
+                </div>div>
+              
+              <div className="bg-white shadow-md">
+                      <div className="container mx-auto px-4 py-4">
+                                <div className="flex items-center justify-between">
+                                  {/* الشعار */}
+                                            <div className="flex items-center">
+                                                          <Link href="/" className="text-2xl font-bold text-primary-600 hover:text-secondary-500 transition-colors flex items-center">
+                                                                          <span className="mr-1">Bazaar</span>span>
+                                                                          <span className="text-secondary-500 mx-1">|</span>span>
+                                                                          <span className="text-secondary-600 mr-1">بازار</span>span>
+                                                                        </Link>Link>
+                                                        </div>div>
+                                
+                                  {/* زر القائمة للموبايل */}
+                                            <div className="md:hidden">
+                                                          <button
+                                                                            onClick={toggleMobileMenu}
+                                                                            className="text-gray-700 hover:text-primary-600 transition-colors"
+                                                                          >
+                                                            {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+                                                                        </button>button>
+                                                        </div>div>
+                                
+                                  {/* حقل البحث */}
+                                            <div className="hidden md:flex flex-1 mx-10 relative">
+                                                          <input 
+                                                                            type="text" 
+                                                            placeholder="ابحث عن منتجات..." 
+                                                            className="w-full border border-gray-300 rounded-full py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                                                          />
+                                                          <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-primary-600">
+                                                                          <FaSearch />
+                                                                        </button>button>
+                                                        </div>div>
+                                
+                                  {/* القائمة الرئيسية للديسكتوب */}
+                                            <nav className="hidden md:flex space-x-8 space-x-reverse">
+                                                          <Link href="/" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                          الرئيسية
+                                                                        </Link>Link>
+                                                          <Link href="/makeup" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                          المكياج
+                                                                        </Link>Link>
+                                                          <Link href="/perfumes" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                          العطور
+                                                                        </Link>Link>
+                                                          <Link href="/skincare" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                          العناية
+                                                                        </Link>Link>
+                                                          <Link href="/premium" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                          بريميوم
+                                                                        </Link>Link>
+                                                          <Link href="/brands" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                          الماركات
+                                                                        </Link>Link>
+                                                        </nav>nav>
+                                
+                                  {/* أيقونات المستخدم وسلة التسوق */}
+                                            <div className="hidden md:flex items-center space-x-4">
+                                                          <Link href="/account" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                          <FaUser size={20} />
+                                                                        </Link>Link>
+                                                          <Link href="/cart" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                          <FaShoppingCart size={20} />
+                                                                        </Link>Link>
+                                                        </div>div>
+                                          </div>div>
+                              </div>div>
+                    </div>div>
+        
+          {/* القائمة المنسدلة للموبايل */}
+          {mobileMenuOpen && (
+              <div className="md:hidden bg-white shadow-lg">
+                        <div className="container mx-auto px-4 py-3">
+                                    <div className="relative mb-4">
+                                                  <input 
+                                                                    type="text" 
+                                                    placeholder="ابحث عن منتجات..." 
+                                                    className="w-full border border-gray-300 rounded-full py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                                                  />
+                                                  <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-primary-600">
+                                                                  <FaSearch />
+                                                                </button>button>
+                                                </div>div>
+                                    <nav className="flex flex-col space-y-3">
+                                                  <Link href="/" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                  الرئيسية
+                                                                </Link>Link>
+                                                  <Link href="/makeup" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                  المكياج
+                                                                </Link>Link>
+                                                  <Link href="/perfumes" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                  العطور
+                                                                </Link>Link>
+                                                  <Link href="/skincare" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                  العناية
+                                                                </Link>Link>
+                                                  <Link href="/premium" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                  بريميوم
+                                                                </Link>Link>
+                                                  <Link href="/brands" className="text-gray-700 hover:text-primary-600 transition-colors">
+                                                                  الماركات
+                                                                </Link>Link>
+                                                  <div className="flex space-x-4 pt-2 border-t border-gray-200">
+                                                                  <Link href="/account" className="text-gray-700 hover:text-p</div>ld text-primary-600">
               Bazaar
             </Link>
           </div>
