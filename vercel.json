@@ -1,8 +1,6 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/frontend/$1" }
-  ],
-  "buildCommand": "cd frontend && npm run build",
+  "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/.next",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "installCommand": "cd frontend && npm install"
 }
